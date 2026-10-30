@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kompeki Plaza | Luxury Hotel</title>
+<style>
+:root {
+  --dark:#101e2b;
+  --gold:#c6a46b;
+  --light:#f7f5f0;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:Arial,sans-serif; color:#26313b; background:var(--light); }
+header { background:var(--dark); color:white; padding:18px 6%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; }
+.logo { color:var(--gold); font-size:24px; letter-spacing:3px; font-family:Georgia,serif; }
+nav a { color:white; text-decoration:none; margin:0 10px; font-size:14px; }
+nav a:hover { color:var(--gold); }
+.hero { min-height:480px; display:flex; align-items:center; justify-content:center; text-align:center; color:white; padding:45px 20px; background:linear-gradient(#07152288,#071522aa),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85') center/cover; }
+.hero h1 { font-family:Georgia,serif; font-size:clamp(38px,7vw,76px); margin:10px 0; }
+.hero p { font-size:19px; }
+button,.btn { background:var(--gold); color:#14202c; border:0; border-radius:5px; padding:13px 23px; font-weight:bold; cursor:pointer; text-decoration:none; display:inline-block; }
+button:hover,.btn:hover { background:#e0bd83; }
+section { padding:65px 7%; }
+h2 { font-family:Georgia,serif; font-size:34px; text-align:center; color:var(--dark); margin:0 0 12px; }
+.subtitle { text-align:center; color:#69727b; margin-bottom:35px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
+.card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 5px 22px #00000012; }
+.card img { width:100%; height:205px; object-fit:cover; }
+.content { padding:22px; }
+.content h3 { margin:0 0 10px; color:var(--dark); }
+.content p { line-height:1.6; color:#606a72; }
+.price { color:#a47d43; font-weight:bold; font-size:19px; }
+.dark { background:var(--dark); }
+.dark h2 { color:white; }
+.dark .subtitle { color:#d5d5d5; }
+.booking { background:white; padding:30px; max-width:850px; margin:auto; border-radius:12px; box-shadow:0 5px 25px #0002; }
+.form-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:15px; }
+label { display:block; font-weight:bold; margin-bottom:7px; }
+input,select,textarea { width:100%; padding:12px; border:1px solid #ccc; border-radius:5px; font:inherit; }
+.booking button { margin-top:20px; }
+#result { margin-top:18px; font-weight:bold; line-height:1.7; }
+footer { background:#09131d; color:#ddd; padding:35px 7%; text-align:center; line-height:1.8; }
+@media(max-width:650px) { nav a { display:inline-block; margin:5px; } section { padding:45px 5%; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">KOMPEKI PLAZA</div>
+  <nav>
+    <a href="#rooms">Номера</a>
+    <a href="#services">Услуги</a>
+    <a href="#experience">Впечатления</a>
+    <a href="#booking">Бронирование</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div>
+    <p>НОВЫЙ УЗБЕКИСТАН • LUXURY HOSPITALITY</p>
+    <h1>Kompeki Plaza</h1>
+    <p>Искусство безупречного гостеприимства</p>
+    <a class="btn" href="#booking">Забронировать номер</a>
+  </div>
+</div>
+
+<section id="rooms">
+  <h2>Номера и люксы</h2>
+  <p class="subtitle">Комфорт, элегантность и персональный сервис</p>
+  <div class="grid" id="roomsGrid"></div>
+</section>
+
+<section id="services" class="dark">
+  <h2>Услуги и развлечения</h2>
+  <p class="subtitle">Всё необходимое для незабываемого отдыха</p>
+  <div class="grid" id="servicesGrid"></div>
+</section>
+
+<section id="experience">
+  <h2>Уникальные впечатления</h2>
+  <p class="subtitle">Откройте для себя традиции Центральной Азии</p>
+  <div class="grid">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80" alt="Кулинарный мастер-класс">
+      <div class="content">
+        <h3>Мастер-класс по приготовлению бешбармака</h3>
+<p>Приготовьте традиционное блюдо вместе с профессиональным шеф-поваром. В программу входят ингредиенты, обучение и дегустация.</p>
+        <p class="price">450 000 UZS / человек</p>
+        <a class="btn" href="#booking">Оставить заявку</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="Путешествия">
+      <div class="content">
+        <h3>Частный гид</h3>
+        <p>Индивидуальные экскурсии, культурные маршруты и знакомство с достопримечательностями.</p>
+        <p class="price">От 600 000 UZS / экскурсия</p>
+        <a class="btn" href="#booking">Оставить заявку</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="booking">
+  <h2>Бронирование</h2>
+  <p class="subtitle">Рассчитайте стоимость проживания и отправьте заявку</p>
+  <div class="booking">
+    <div class="form-grid">
+      <div>
+        <label for="guest">Имя гостя</label>
+        <input id="guest" placeholder="Ваше имя">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="example@mail.com">
+      </div>
+      <div>
+        <label for="checkin">Дата заезда</label>
+        <input id="checkin" type="date">
+      </div>
+      <div>
+        <label for="checkout">Дата выезда</label>
+        <input id="checkout" type="date">
+      </div>
+      <div>
+        <label for="room">Категория номера</label>
+        <select id="room"></select>
+      </div>
+      <div>
+        <label for="guests">Количество гостей</label>
+        <select id="guests">
+          <option value="1">1 гость</option>
+          <option value="2">2 гостя</option>
+          <option value="3">3 гостя</option>
+          <option value="4">4 гостя</option>
+        </select>
+      </div>
+    </div>
+    <p><label for="extra">Дополнительная услуга</label>
+    <select id="extra"></select></p>
+    <button onclick="calculate()">Рассчитать стоимость</button>
+    <div id="result" aria-live="polite"></div>
+    <p><small>Бронирование демонстрационное. Заявка не отправляется в гостиницу до подключения сервера.</small></p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">KOMPEKI PLAZA</div>
+  <p>Новый Узбекистан, Узбекистан</p>
+  <p>Luxury Rooms • Fine Dining • Wellness • Experiences</p>
+  <p>© 2026 Kompeki Plaza. Все права защищены.</p>
+</footer>
+
+<script>
+const rooms = [
+  {name:"Standard Room",price:1200000,img:"photo-1611892440504-42a792e24d32",desc:"Элегантный номер с удобной кроватью, Wi-Fi и телевизором."},
+  {name:"Deluxe Room",price:1700000,img:"photo-1590490360182-c33d57733427",desc:"Просторный номер с улучшенным интерьером."},
+  {name:"Premier Room",price:2300000,img:"photo-1618773928121-c32242e63f39",desc:"Премиальный комфорт и дополнительные удобства."},
+  {name:"Executive Suite",price:3500000,img:"photo-1566665797739-1674de7a421a",desc:"Роскошный люкс с гостиной и спальней."},
+  {name:"Presidential Suite",price:8500000,img:"photo-1582719478250-c89cae4dc85b",desc:"Эксклюзивные апартаменты и персональный сервис."}
+];
+const services = [
+  ["Aurora Restaurant & Terrace","Международная и авторская кухня","От 180 000 UZS / человек","photo-1517248135467-4c7edcad34c4"],
+  ["KP Market","Продукты, сувениры и товары первой необходимости","От 20 000 UZS / товар","photo-1542838132-92c53300491e"],
+  ["ORO Pool Bar","Коктейли, освежающие напитки и закуски","От 75 000 UZS / заказ","photo-1536935338788846bb9981813"],
+  ["La Vallée Spa","Массаж, уход за телом и релакс-программы","От 450 000 UZS / сеанс","photo-1540555700478-4be289fbecef"],
+  ["Indoor Pool","Крытый бассейн для круглогодичного отдыха","150 000 UZS / посещение","photo-1576013551627-0cc20b96c2a7"],
+  ["Infinity Pool","Открытый панорамный бассейн","250 000 UZS / посещение","photo-1572331165267-854da2b10ccc"],
+  ["KP Fitness","Современный тренажёрный зал","120 000 UZS / посещение","photo-1534438327276-14e5300c3a48"],
+  ["Солёная пещера","Расслабляющий сеанс в соляной комнате","180 000 UZS / сеанс","photo-1519823551278-64ac92734fb1"],
+  ["Трансфер","Индивидуальная встреча и поездка","От 300 000 UZS / поездка","photo-1449965408869-eaa3f722e40d"],
+  ["Завтрак","Шведский стол с разнообразными блюдами","200 000 UZS / человек","photo-1533089860892-a7c6f0a88666"],
+  ["Room Service","Доставка еды и напитков в номер","От 100 000 UZS / заказ","photo-1547592180-85f173990554"]
+];
+const money = n => new Intl.NumberFormat("ru-RU").format(n)+" UZS";
+const photo = id => "https://images.unsplash.com/"+id+"?auto=format&fit=crop&w=800&q=80";
+
+document.getElementById("roomsGrid").innerHTML=rooms.map(r=>`
+<article class="card">
+<img src="${photo(r.img)}" alt="${r.name}" loading="lazy">
+<div class="content"><h3>${r.name}</h3><p>${r.desc}</p>
+<p class="price">${money(r.price)} / ночь</p>
+<a class="btn" href="#booking">Выбрать номер</a></div></article>`).join("");
+
+document.getElementById("servicesGrid").innerHTML=services.map(s=>`
+<article class="card">
+<img src="${photo(s[3])}" alt="${s[0]}" loading="lazy">
+<div class="content"><h3>${s[0]}</h3><p>${s[1]}</p>
+<p class="price">${s[2]}</p></div></article>`).join("");
+
+document.getElementById("room").innerHTML=rooms.map((r,i)=>
+`<option value="${i}">${r.name} — ${money(r.price)}</option>`).join("");
+
+const extras=[
+  ["Без дополнительных услуг",0],
+  ["Завтрак (за гостя за ночь)",200000],
+  ["Трансфер (однократно)",300000],
+  ["Мастер-класс по бешбармаку (за гостя)",450000],
+  ["Частный гид (одна экскурсия)",600000]
+];
+document.getElementById("extra").innerHTML=extras.map((e,i)=>
+`<option value="${i}">${e[0]}</option>`).join("");
+
+const today=new Date();
+const localDate=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+document.getElementById("checkin").min=localDate(today);
+document.getElementById("checkout").min=localDate(today);
+
+function calculate(){
+ const start=document.getElementById("checkin").value;
+ const end=document.getElementById("checkout").value;
+ const result=document.getElementById("result");
+ const nights=Math.round((new Date(end+"T12:00:00")-new Date(start+"T12:00:00"))/86400000);
+ if(!start||!end||nights<=0||start<localDate(new Date())){
+   result.textContent="Укажите корректные даты заезда и выезда.";
+   return;
+ }
+ const room=rooms[Number(document.getElementById("room").value)];
+ const guests=Number(document.getElementById("guests").value);
+ const extra=Number(document.getElementById("extra").value);
+ let extraCost=extras[extra][1];
+ if(extra===1) extraCost*=nights*guests;
+ if(extra===3) extraCost*=guests;
+ const total=room.price*nights+extraCost;
+ result.textContent=`Проживание: ${nights} ночей. Номер: ${room.name}. Гостей: ${guests}. Дополнительные услуги: ${money(extraCost)}. Итого: ${money(total)}. Предварительный расчёт, не подтверждение бронирования.`;
+}
+</script>
+</body>
+</html>
